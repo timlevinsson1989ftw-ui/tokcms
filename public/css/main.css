@@ -74,6 +74,7 @@
     margin-block:6em;
     min-block-size:5rem;
     display: flex;
+    align-items:start;
     gap:1em;
     > * {
       background: hsl(228 8% 13%);
@@ -204,7 +205,6 @@
   /* --- from: tokcss\includes\sidenav.tokcss --- */
   aside {
     inline-size:20rem;
-    padding-block-end:3em;
     overflow:clip;
     ul {
       li {
@@ -257,6 +257,7 @@
       grid-template-columns:1fr auto;
       gap:1em;
       grid-column:1/-1;
+      container-type:inline-size;
       background: 
         radial-gradient(circle at 100% 0, hsl(225 20% 30% / .25), #0000),
         linear-gradient(
@@ -342,16 +343,89 @@
       grid-column:span 2;
       border:1px solid hsl(226 12% 21%);
       border-radius: .5rem;
+      background: hsl(228 8% 10%);
       .content-title {
         display: flex;
         justify-content:space-between;
         padding: 1em;
+        span {
+          font-weight: bold;
+          text-transform:uppercase;
+        }
+      }
+      .article-content {
+        display: grid;
+        grid-template-columns:auto 1fr auto auto;
+        column-gap:.5em;
+        .article-row {
+          grid-column:1/-1;
+          display: grid;
+          grid-template-columns:subgrid;
+          padding: .5em;
+          & + & {
+            border-block-start:1px solid hsl(0 0% 20%);
+          }
+          .title-info {
+            display: grid;
+            gap:.3em;
+          }
+          .title {
+            font-weight: bold;
+          }
+          .article-info {
+            font-size: .85rem;
+            color: hsl(0 0% 50%);
+            a {
+              color: hsl(0 0% 60%);
+              font-weight: 500;
+              text-decoration:none;
+            }
+            .username {
+              --_role:attr(data-role type(<custom-ident>));
+              color: if(
+                style(--_role:Admin): red;
+                style(--_role:Moderator): lime;
+                else: white
+              );
+              font-weight: bold;
+            }
+          }
+          .profile {
+            border-radius: 50%;
+          }
+          .badge {
+            --_status:attr(data-status type(<custom-ident>));
+            color: if(
+              style(--_status:Upcoming): oklch(.7 .3 200);
+              style(--_status:Active): oklch(.7 .3 300);
+              style(--_status:Draft): oklch(.7 .3 100);
+              else:white
+            );
+            padding: .5em;
+            border:2px solid;
+            border-radius: .5rem;
+            justify-self:end;
+            align-self:center;
+            background: hsl(from currentColor h s l / .15);
+          }
+          .edit {
+            background: none;
+            border:none;
+            padding-inline:1em;
+            color: hsl(0 0% 50%);
+          }
+        }
       }
     }
     .quick-actions {
       border:1px solid hsl(226 12% 21%);
       padding: 1em;
       border-radius: .5rem;
+      background: hsl(228 8% 10%);
+      .content-title {
+        font-weight: bold;
+        text-transform:uppercase;
+      }
       .actions {
         display: grid;
         grid-template-columns:repeat(2, 1fr);
@@ -365,6 +439,29 @@
           white-space:nowrap;
         }
       }
+    }
+  }
+}
+
+@media (width <= 80rem) {
+  /* --- from: tokcss\includes\laptop.tokcss --- */
+  main {
+    grid-template-columns:repeat(2, 1fr);
+    .articles {
+      grid-column:1/-1;
+    }
+    .quick-actions {
+      grid-column:1/-1;
+    }
+  }
+}
+
+@media (width <= 60rem) {
+  /* --- from: tokcss\includes\tablet.tokcss --- */
+  .layout {
+    flex-direction:column;
+    aside {
+      inline-size:auto;
     }
   }
 }

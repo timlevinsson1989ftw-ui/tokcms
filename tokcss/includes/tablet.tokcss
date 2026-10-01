@@ -1,0 +1,6 @@
+.layout {
+  flex-direction:column;
+  aside {
+    inline-size:auto;
+  }
+}

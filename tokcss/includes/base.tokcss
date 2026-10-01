@@ -19,6 +19,7 @@ body {
   margin-block:6em;
   min-block-size:5rem;
   display: flex;
+  align-items:start;
   gap:1em;
   > * {
     background: hsl(228 8% 13%);

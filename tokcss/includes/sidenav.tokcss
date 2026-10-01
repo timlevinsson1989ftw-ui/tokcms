@@ -1,6 +1,5 @@
 aside {
   inline-size:20rem;
-  padding-block-end:3em;
   overflow:clip;
   ul {
     li {

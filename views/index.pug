@@ -1,5 +1,10 @@
 extends layout
 block content
+  -
+    const articles = [
+      {profile:"//i.pravatar.cc/40?img=3", title:"Account Registrations", link:{text:"Website Updates", link:"/news"}, postdate:"2h", badge:"Upcoming", author:"Tok124", role:"Admin"},
+      {profile:"//i.pravatar.cc/40?img=3", title:"Logins", link:{text:"Website Updates", link:"/news"}, postdate:"2h", badge:"Upcoming", author:"Tok124", role:"Admin"},
+    ]
   .slider
     .frame
       .frame-content
@@ -18,8 +23,18 @@ block content
         .bar
   .articles 
     .content-title
-      span RECENT CONTENT & ARTICLES
+      span RECENT & UPCOMING UPDATES
       a(href="#") View All &gt;
+    .article-content
+      each row in articles
+        .article-row
+          img.profile(src=row.profile)
+          .title-info
+            .title #{row.title}
+            .article-info in #[a(href=row.link.link) #{row.link.text}] &bull; #[span.postdate #{row.postdate} ago by #[a.username(href=`/profile/${row.author}` data-role=row.role) @#{row.author}]]
+          .badge(data-status=row.badge) #{row.badge}
+          button.edit
+            i.fa-solid.fa-pen-to-square
   .quick-actions 
     .content-title Quick Actions
     .actions 

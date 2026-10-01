@@ -1,0 +1,9 @@
+main {
+  grid-template-columns:repeat(2, 1fr);
+  .articles {
+    grid-column:1/-1;
+  }
+  .quick-actions {
+    grid-column:1/-1;
+  }
+}

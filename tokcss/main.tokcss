@@ -7,4 +7,6 @@
 #include:"includes/header.tokcss" layer(header);
 #include:"includes/sidenav.tokcss" layer(sidenav);
 #include:"includes/main-content.tokcss" layer(main);
+#include:"includes/laptop.tokcss" (width <= 80rem);
+#include:"includes/tablet.tokcss" (width <= 60rem);
 #include:"includes/mobile.tokcss" (width <= 40rem);
