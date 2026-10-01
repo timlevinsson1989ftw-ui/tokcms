@@ -13,7 +13,7 @@ aside {
         padding: 1em;
         color: inherit;
         text-decoration:none;
-        transition:padding .5s;
+        transition:padding .5s, background .5s;
         &::before {
           position: absolute;
           content:"";
@@ -26,6 +26,7 @@ aside {
         }
         &:hover {
           padding-inline-start:2em;
+          background-color: hsl(200 100% 50% / .05);
           &::before {
             opacity:1;
           }

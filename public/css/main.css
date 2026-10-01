@@ -45,6 +45,10 @@
   	border-collapse: collapse;
   	border-spacing: 0;
   }
+
+  button {
+  	cursor:pointer;
+  }
 }
 
 @layer base {
@@ -213,7 +217,7 @@
           padding: 1em;
           color: inherit;
           text-decoration:none;
-          transition:padding .5s;
+          transition:padding .5s, background .5s;
           &::before {
             position: absolute;
             content:"";
@@ -226,6 +230,7 @@
           }
           &:hover {
             padding-inline-start:2em;
+            background-color: hsl(200 100% 50% / .05);
             &::before {
               opacity:1;
             }
@@ -241,6 +246,93 @@
   main {
     flex:1;
     padding: 1em;
+    .slider {
+      border:1px solid hsl(226 12% 21%);
+      border-radius: .3rem;
+      padding: 1em;
+      display: grid;
+      grid-template-columns:1fr auto;
+      gap:1em;
+      background: 
+        radial-gradient(circle at 100% 0, hsl(225 20% 30% / .25), #0000),
+        linear-gradient(
+          90deg, 
+          hsl(225 15% 11%), 
+          hsl(228 16% 12%),
+          hsl(225 18% 9%)
+        );
+      .frame {
+        .frame-content {
+          .announcement-tag {
+            border:1px solid hsl(194 100% 50% / .3);
+            inline-size:fit-content;
+            display: flex;
+            padding-inline:.5em;
+            padding-block:.3em;
+            border-radius: calc(infinity * 1px);
+            gap:.5em;
+            background: hsl(194 100% 50% / .15);
+            color: hsl(194 100% 50%);
+            font-weight: 500;
+            font-size: 0.8rem;
+            margin-block-end:1em;
+            &::before {
+              content:"\25CF";
+              text-box:trim-both cap alphabetic;
+            }
+          }
+          h1 {
+            font-weight: bold;
+            font-size: 1.5rem;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+          }
+          p {
+            color: hsl(218 11% 65%);
+          }
+          .button-group {
+            display: flex;
+            gap:1em;
+            button {
+              padding-inline: 1em;
+              padding-block:.7em;
+              border-radius: .5rem;
+              border:1px solid hsl(0 0% 25%);
+              &:nth-child(1) {
+                background: hsl(200 100% 50%);
+                border-color:#0000;
+                font-weight: 600;
+                color: hsl(0 0% 0%);
+                font-size: .8rem;
+              }
+              &:nth-child(2) {
+                background: hsl(224 13% 17%);
+              }
+            }
+          }
+        }
+      }
+      .frame-controls {
+        display: grid;
+        align-content:center;
+        grid-template-columns:repeat(2, 1fr);
+        gap:.5em;
+        .bars {
+          grid-column:1/-1;
+          display: flex;
+          gap:.2em;
+          .bar {
+            block-size:.2em;
+            background: hsl(200 80% 60%);
+            inline-size:.1em;
+            flex:1;
+            border-radius: calc(infinity * 1px);
+            &.active {
+              flex:2;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
