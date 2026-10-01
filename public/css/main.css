@@ -362,6 +362,7 @@
           border:1px solid hsl(226 12% 21%);
           text-decoration:none;
           color: hsl(0 0% 100%);
+          white-space:nowrap;
         }
       }
     }
