@@ -1,0 +1,6 @@
+{
+  "watch": ["server.js", "acp"],
+  "ext": "js,json",
+  "ignore": ["acp/views", "views", "public"],
+  "delay": 200
+}

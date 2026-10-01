@@ -1,0 +1,27 @@
+*,*::before,*::after {
+  box-sizing:border-box;
+}
+
+html {
+  color-scheme: dark;
+  font-family:system-ui;
+  interpolate-size: allow-keywords;
+}
+
+body {
+  min-block-size:100svb;
+}
+
+.layout {
+  inline-size: min(var(--container-width), 100% - 3em);
+  inline-size: calc-size(stretch, min(var(--container-width), size - 3em));
+  margin-inline:auto;
+  margin-block:6em;
+  min-block-size:5rem;
+  display: flex;
+  gap:1em;
+  > * {
+    background: hsl(228 8% 13%);
+    border-radius: .5rem;
+  }
+}

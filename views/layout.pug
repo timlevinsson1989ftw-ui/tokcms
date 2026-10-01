@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title #{title} · TokCMS
+    link(rel="stylesheet", href="/css/main.css")
+  body
+    ul#user-options.user-options-dropdown(popover)
+      li: a(href="#") My Stats
+      li: a(href="#") Change Avatar
+      li: a(href="/logout") Logout
+    header
+      .navbar-wrapper
+        a.navbar-brand(href="/") TokCMS
+        .nav-container
+          nav(aria-label="Panels")
+            ul 
+              li: a(href="/ucp") User Panel 
+              li: a(href="/acp") Admin Panel
+          button.user-options(type="button" popovertarget="user-options")
+            img(src="//i.pravatar.cc/40?img=3")
+        button.toggle-nav(type="button" aria-label="Toggle navigation", aria-expanded="false", aria-controls="nav-menu")
+          i.fa-solid.fa-bars(aria-hidden="true")
+    .layout
+      aside
+        nav(aria-label="Main")
+          ul 
+            li: a(href="/") Home
+            li: a(href="/survey") Survey
+            li: a(href="/guides") Guides
+            li: a(href="/cssnews") CSS News
+      main
+        block content
+    script(src="https://kit.fontawesome.com/c313376d76.js" crossorigin="anonymous")
+    script(src="/js/navbar.js")

@@ -1,0 +1,114 @@
+.user-options-dropdown {
+  --transition-easing:linear(0, 0.01 0.7%, 0.046 1.5%, 0.192 3.2%, 0.391 4.8%, 0.954 8.8%, 1.201 11%, 1.347 13%, 1.388 14%, 1.41 15.1%, 1.411 15.9%, 1.4 16.8%, 1.342 18.6%, 1.256 20.3%, 1.013 24.5%, 0.913 26.7%, 0.857 28.6%, 0.831 30.6%, 0.833 32.1%, 0.851 33.7%, 1.024 41.6%, 1.055 43.8%, 1.069 46%, 1.061 49.3%, 0.991 57.1%, 0.972 61.4%, 0.974 64.8%, 1.011 76.7%, 0.996 91.2%, 1);
+  margin: 0;
+  margin-block-start: 1em;
+  position-area: block-end span-inline-start;
+  list-style: none;
+  padding-inline: .5em;
+  background: hsl(0 0% 15%);
+  border: 1px solid hsl(0 0% 25%);
+  border-radius: .5rem;
+  overflow: clip;
+  block-size: 0;
+  opacity: 0;
+  translate:0 -100%;
+  transition:
+    block-size .5s,
+    opacity .5s,
+    translate .5s linear,
+    display .5s allow-discrete,
+    overlay .5s allow-discrete;
+  &:popover-open {
+    block-size: calc-size(auto, size);
+    opacity: 1;
+    translate:0;
+    transition:
+      block-size .5s,
+      opacity 1.5s,
+      translate 1.5s var(--transition-easing),
+      display 1.5s allow-discrete,
+      overlay 1.5s allow-discrete;
+    @starting-style {
+      block-size: 0;
+      opacity: 0;
+      translate:0 -100%;
+    }
+  }
+  li {
+    & + & {
+      border-block-start: 1px solid hsl(0 0% 25%);
+    }
+    a {
+      display: block;
+      padding: 1em;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+header {
+  background: hsl(0 0% 15%);
+  border-block-end:3px solid hsl(200 100% 50%);
+  a {
+    display: block;
+    text-decoration:none;
+    color: inherit;
+    outline:none;
+  }
+  .navbar-wrapper {
+    inline-size: min(var(--container-width), 100% - 3em);
+    inline-size: calc-size(stretch, min(var(--container-width), size - 3em));
+    margin-inline:auto;
+    display: flex;
+    justify-content:space-between;
+    .navbar-brand {
+      font-size: 1.5rem;
+      padding: .5em;
+      font-weight: bold;
+    }
+    .nav-container {
+      display: flex;
+      gap:1em;
+      .user-options {
+        img {
+          border-radius: 50%;
+        }
+      }
+      nav {
+        position: relative;
+        ul {
+          display: flex;
+          gap:.5em;
+          li {
+            a {
+              padding-inline: 1.5em;
+              padding-block:.7em;
+              margin-block:.3em;
+              background: hsl(0 0% 12%);
+              border-radius: .5rem;
+              border:1px solid hsl(0 0% 20%);
+              font-weight: 500;
+              transition:background .5s;
+              &:hover {
+                background: hsl(200 100% 50%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .toggle-nav {
+    display: none;
+    font-size: 2rem;
+    aspect-ratio:1;
+    align-self:center;
+  }
+  button {
+    padding: 0;
+    border:none;
+    cursor:pointer;
+    background: none;
+  }
+}

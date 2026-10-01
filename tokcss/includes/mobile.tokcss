@@ -1,0 +1,28 @@
+header {
+  position: relative;
+  nav {
+    display: none;
+    position: absolute;
+    inset-block-start:100%;
+    inset-inline:0;
+    ul {
+      flex-direction:column;
+      gap:0;
+      li {
+        a {
+          margin: 0;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+  .toggle-nav {
+    display: block;
+  }
+  .user-options {
+    display: none;
+  }
+  &:has(.toggle-nav[aria-expanded=true]) nav {
+    display: block;
+  }
+}

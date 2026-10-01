@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="robots", content="noindex")
+    title #{title} · ACP
+    link(rel="stylesheet", href="/css/acp.css")
+    block head
+  body
+    header.topbar
+      .inner
+        a.logo(href=base + '/') TokCMS
+        .actions
+          span Welcome, #{admin.username}
+          a.btn(href="/") Go back
+          form(method="post", action=base + '/logout')
+            button.btn(type="submit") Log out
+
+    .shell
+      nav.sidebar
+        h2 Website
+        a(href=base + '/', class=active === 'dashboard' ? 'is-active' : null) Dashboard
+        //- Add more links here, e.g.
+        //- a(href=base + '/accounts', class=active === 'accounts' ? 'is-active' : null) Accounts
+
+      main.content
+        block content
+
+    block scripts

@@ -1,0 +1,10 @@
+:root {
+  --container-width:90rem;
+}
+
+#include:"includes/reset.tokcss" layer(reset);
+#include:"includes/base.tokcss" layer(base);
+#include:"includes/header.tokcss" layer(header);
+#include:"includes/sidenav.tokcss" layer(sidenav);
+#include:"includes/main-content.tokcss" layer(main);
+#include:"includes/mobile.tokcss" (width <= 40rem);

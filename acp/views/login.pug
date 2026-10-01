@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="robots", content="noindex")
+    title #{title} · ACP
+    link(rel="stylesheet", href="/css/acp.css")
+  body
+    main.login
+      form.login-card(method="post", action=base + '/login')
+        h1 TokCMS ACP
+        if error
+          p.error= error
+        label
+          | Username
+          input(type="text", name="username", required, autofocus, autocomplete="username")
+        label
+          | Password
+          input(type="password", name="password", required, autocomplete="current-password")
+        button.btn.primary(type="submit") Log in
