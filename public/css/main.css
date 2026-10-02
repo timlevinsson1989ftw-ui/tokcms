@@ -76,10 +76,6 @@
     display: flex;
     align-items:start;
     gap:1em;
-    > * {
-      background: hsl(228 8% 13%);
-      border-radius: .5rem;
-    }
   }
 }
 
@@ -205,7 +201,19 @@
   /* --- from: tokcss\includes\sidenav.tokcss --- */
   aside {
     inline-size:20rem;
-    overflow:clip;
+    display: grid;
+    gap:1em;
+    nav {
+      background: hsl(228 8% 13%);
+      border-radius: .7rem;
+      overflow:clip;
+    }
+    iframe {
+      border-radius: .5rem;
+      inline-size:100%;
+      inline-size:stretch;
+      border-radius: .7rem;
+    }
     ul {
       li {
         position: relative;
@@ -249,6 +257,8 @@
     display: grid;
     grid-template-columns:repeat(3, 1fr);
     gap:1em;
+    background: hsl(228 8% 13%);
+    border-radius: .7rem;
     .slider {
       border:1px solid hsl(226 12% 21%);
       border-radius: .3rem;
@@ -460,6 +470,7 @@
   /* --- from: tokcss\includes\tablet.tokcss --- */
   .layout {
     flex-direction:column;
+    align-items:stretch;
     aside {
       inline-size:auto;
     }

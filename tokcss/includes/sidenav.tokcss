@@ -1,6 +1,18 @@
 aside {
   inline-size:20rem;
-  overflow:clip;
+  display: grid;
+  gap:1em;
+  nav {
+    background: hsl(228 8% 13%);
+    border-radius: .7rem;
+    overflow:clip;
+  }
+  iframe {
+    border-radius: .5rem;
+    inline-size:100%;
+    inline-size:stretch;
+    border-radius: .7rem;
+  }
   ul {
     li {
       position: relative;

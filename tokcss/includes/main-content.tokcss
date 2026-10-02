@@ -4,6 +4,8 @@ main {
   display: grid;
   grid-template-columns:repeat(3, 1fr);
   gap:1em;
+  background: hsl(228 8% 13%);
+  border-radius: .7rem;
   .slider {
     border:1px solid hsl(226 12% 21%);
     border-radius: .3rem;
