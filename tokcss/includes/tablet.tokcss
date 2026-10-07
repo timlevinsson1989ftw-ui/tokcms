@@ -5,3 +5,7 @@
     inline-size:auto;
   }
 }
+
+.pulse {
+  grid-column:1/-1;
+}

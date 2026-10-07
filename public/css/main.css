@@ -450,6 +450,78 @@
         }
       }
     }
+    .pulse {
+      background: hsl(228 8% 10%);
+      border-radius: .5rem;
+      border:1px solid hsl(221 12% 21%);
+      padding: 1em;
+      gap:.5em;
+      container-type:inline-size;
+      display: grid;
+      gap:1em;
+      .top-row {
+        display: flex;
+        justify-content:space-between;
+        align-content:center;
+        .title {
+          font-weight: bold;
+        }
+        .right {
+          color: hsl(0 0% 50%);
+          font-size: .8rem;
+        }
+      }
+      .pulse-container {
+        display: grid;
+        gap:.5em;
+        @container (width >= 20rem) {
+          grid-template-columns:1fr 1fr;
+        }
+        .box {
+          background: hsl(225 11% 16%);
+          border:1px solid hsl(225 11% 26%);
+          border-radius: .5rem;
+          padding: .5em;
+          .box-title {
+            color: hsl(228 10% 70%);
+          }
+          .box-amount {
+            font-size: 1.5rem;
+            font-weight: 900;
+          }
+          .percentage {
+            font-weight: bold;
+          }
+          &:nth-child(1) .percentage {
+            color: hsl(148 65% 51%);
+          }
+          &:nth-child(2) .percentage {
+            color: hsl(284 54% 67%);
+          }
+        }
+      }
+      .graph {
+        color: hsl(0 0% 60%);
+        .graph-header {
+          display: flex;
+          justify-content:space-between;
+        }
+        .bars {
+          display: flex;
+          gap:.2em;
+          block-size:5rem;
+          align-items:end;
+          .bar {
+            --from: .3;
+            --to: 1;
+            background: hsl(195 100% 50% / calc(var(--from) + (var(--to) - var(--from)) * (sibling-index() - 1) / (sibling-count() - 1)));
+            flex:1;
+            block-size:calc(6rem / (sibling-count() + 1) * (sibling-index() - .5));
+            border-radius: .3rem;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -474,6 +546,10 @@
     aside {
       inline-size:auto;
     }
+  }
+
+  .pulse {
+    grid-column:1/-1;
   }
 }
 
