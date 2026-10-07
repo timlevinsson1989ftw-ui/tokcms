@@ -16,7 +16,7 @@ body {
   inline-size: min(var(--container-width), 100% - 3em);
   inline-size: calc-size(stretch, min(var(--container-width), size - 3em));
   margin-inline:auto;
-  margin-block:6em;
+  margin-block:2em;
   min-block-size:5rem;
   display: flex;
   align-items:start;

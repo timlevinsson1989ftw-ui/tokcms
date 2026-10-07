@@ -50,6 +50,7 @@ main {
         }
         p {
           color: hsl(218 11% 65%);
+          text-wrap:pretty;
         }
         .button-group {
           display: flex;
@@ -193,7 +194,6 @@ main {
         border:1px solid hsl(226 12% 21%);
         text-decoration:none;
         color: hsl(0 0% 100%);
-        white-space:nowrap;
       }
     }
   }
@@ -259,7 +259,7 @@ main {
         block-size:5rem;
         align-items:end;
         .bar {
-          --from: .3;
+          --from: .2;
           --to: 1;
           background: hsl(195 100% 50% / calc(var(--from) + (var(--to) - var(--from)) * (sibling-index() - 1) / (sibling-count() - 1)));
           flex:1;

@@ -54,6 +54,17 @@ app.use('/acp', require('./acp/router')); // before the site routes
 
 app.get('/', (req, res) => res.render('index', { title: 'Home' }));
 
+app.get('/profile/:username', (req, res) => {
+  const username = req.params.username;
+
+  return res.render('profile', {
+    title: `${username} Profile`,
+    username
+  });
+});
+
+app.get('/profile', (req, res) => res.status(404).send('Not found'));
+
 app.get('/ucp', (req, res) => res.render('ucp', { title: 'User Panel'}));
 
 // Keep this last

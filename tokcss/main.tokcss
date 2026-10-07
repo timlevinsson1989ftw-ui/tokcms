@@ -1,5 +1,5 @@
 :root {
-  --container-width:90rem;
+  --container-width:100rem;
 }
 
 #include:"includes/reset.tokcss" layer(reset);

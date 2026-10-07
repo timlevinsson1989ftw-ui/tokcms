@@ -1,6 +1,6 @@
 /* --- from: tokcss\main.tokcss --- */
 :root {
-  --container-width:90rem;
+  --container-width:100rem;
 }
 
 @layer reset {
@@ -71,7 +71,7 @@
     inline-size: min(var(--container-width), 100% - 3em);
     inline-size: calc-size(stretch, min(var(--container-width), size - 3em));
     margin-inline:auto;
-    margin-block:6em;
+    margin-block:2em;
     min-block-size:5rem;
     display: flex;
     align-items:start;
@@ -303,6 +303,7 @@
           }
           p {
             color: hsl(218 11% 65%);
+            text-wrap:pretty;
           }
           .button-group {
             display: flex;
@@ -446,7 +447,6 @@
           border:1px solid hsl(226 12% 21%);
           text-decoration:none;
           color: hsl(0 0% 100%);
-          white-space:nowrap;
         }
       }
     }
@@ -512,7 +512,7 @@
           block-size:5rem;
           align-items:end;
           .bar {
-            --from: .3;
+            --from: .2;
             --to: 1;
             background: hsl(195 100% 50% / calc(var(--from) + (var(--to) - var(--from)) * (sibling-index() - 1) / (sibling-count() - 1)));
             flex:1;
@@ -532,9 +532,6 @@
     .articles {
       grid-column:1/-1;
     }
-    .quick-actions {
-      grid-column:1/-1;
-    }
   }
 }
 
@@ -549,6 +546,10 @@
   }
 
   .pulse {
+    grid-column:1/-1;
+  }
+
+  .quick-actions {
     grid-column:1/-1;
   }
 }

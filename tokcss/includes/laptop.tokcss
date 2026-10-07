@@ -3,7 +3,4 @@ main {
   .articles {
     grid-column:1/-1;
   }
-  .quick-actions {
-    grid-column:1/-1;
-  }
 }
