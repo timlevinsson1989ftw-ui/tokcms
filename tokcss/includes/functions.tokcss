@@ -1,0 +1,3 @@
+@function --fluid(--smiw,--smaw,--fmis,--fmas) {
+	result:calc(var(--fmis) + progress(100vw, var(--smiw), var(--smaw)) * (var(--fmas) - var(--fmis)));
+}

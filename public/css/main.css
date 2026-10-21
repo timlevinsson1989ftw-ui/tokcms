@@ -2,6 +2,10 @@
 :root {
   --container-width:100rem;
 }
+/* --- from: tokcss\includes\functions.tokcss --- */
+@function --fluid(--smiw,--smaw,--fmis,--fmas) {
+	result:calc(var(--fmis) + progress(100vw, var(--smiw), var(--smaw)) * (var(--fmas) - var(--fmis)));
+}
 
 @layer reset {
   /* --- from: tokcss\includes\reset.tokcss --- */
